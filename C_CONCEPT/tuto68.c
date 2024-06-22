@@ -1,0 +1,14 @@
+// COMMAND LINE ARGUMENTS
+#include <stdio.h>
+    
+int main(int argc, char const *argv[]){
+    // argc = argument count & argv = argument value
+    
+    printf("The value of argc is %d\n", argc);
+    
+    for(int i = 0; i < argc; i++){
+        printf("This argument at index number %d has value of %s \n", i, argv[i]);
+    }
+
+    return 0;
+}
