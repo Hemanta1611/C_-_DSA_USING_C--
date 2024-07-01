@@ -6,7 +6,17 @@ using namespace std;
 
 int main(){
     
-    cout<<"Hello World"<<endl;
+    // Character Array:
+    char ch[10];
+
+    // Input: --> no need of for loop
+    cin >> ch;
+
+    // Output: --> no need of for loop
+    cout << ch;
+
+    
+
     
     return 0;
 }
