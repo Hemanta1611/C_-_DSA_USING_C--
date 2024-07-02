@@ -9,7 +9,7 @@ void printName(string name){
 }
 
 void printMax(int n1, int n2, int n3){
-    int ans = max(n1,n2); // max is inbuild funtion used to find maximum number between two number
+    int ans = max(n1,n2); // max is inbuild funtion used to find maximum number between two numbers
     int ans1 = max(ans,n3);
     cout<<"Greatest Number of given three number = "<<ans1<<endl;
 }
