@@ -1,26 +1,36 @@
 /*
-#include <stdio.h>
+#include <stdio.h> // Include the standard input-output library
 
-int main(){
+// For loop example
+int main() {
 
-int i;
-for (i = 0; i < 7; i++)
-{
-    printf("%d\n", i);
+    int i; // Declare an integer variable i
+
+    // For loop that initializes i to 0; executes as long as i is less than 7; increments i by 1 after each iteration
+    for (i = 0; i < 7; i++) {
+        // Print the current value of i
+        printf("%d\n", i);
+    }
+
+    return 0; // Return 0 to indicate successful program termination
 }
 
-return 0;
-}
 */
 
-#include <stdio.h>
+#include <stdio.h> // Include the standard input-output library
 
-int main(){
+// For loop example to print characters from 'a' to 'z'
+int main() {
 
-for(char ch = 'a'; ch<='z'; ch++ )
-printf("%c\t\t", ch);
+    // Declare and initialize a character variable ch to 'a'
+    for (char ch = 'a'; ch <= 'z'; ch++) {
+        // Print the current character followed by a tab and two spaces
+        printf("%c\t\t", ch);
+    }
 
-return 0;}
+    return 0; // Return 0 to indicate successful program termination
+}
+
 
 // int i, j;
 // for(i = 0, j = 0; i < 7, j < 9; i++, j++)

@@ -1,13 +1,17 @@
-#include <stdio.h>
-// While loop
-int main(){
+#include <stdio.h> // Include the standard input-output library
 
-int i=0;
-while (i < 54)
-{
- printf("%d\n", i);
- i = i + 1;
-}
+// While loop example
+int main() {
 
-return 0;
+    int i = 0; // Declare and initialize an integer variable i to 0
+
+    // While loop that executes as long as i is less than 54
+    while (i < 54) {
+        // Print the current value of i
+        printf("%d\n", i);
+        // Increment i by 1
+        i = i + 1;
+    }
+
+    return 0; // Return 0 to indicate successful program termination
 }
