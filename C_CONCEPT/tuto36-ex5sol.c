@@ -5,23 +5,29 @@
 //56,2,3,4,1
 //56,4,3,2,1 like this
 
-void arrayrev(int arr[]){
-    int temp;
-    for(int i = 0; i < 5/2 ; i++){
-// 5 / 2 becoz if we swap all than it will interchange to original
-// so we have to inter change the half than it will automatically reversed
-// Swap item i with item (4-i)
+// Function to reverse an array
+// This function takes an array of integers and reverses its elements.
+// It assumes the array has 5 elements.
+void arrayrev(int arr[]) {
+    int temp; // Temporary variable to hold values during swap
+    for (int i = 0; i < 5 / 2; i++) {
+        // Swap item i with item (4 - i)
+        // 5 / 2 because swapping all elements would revert to the original array
         temp = arr[i]; 
-        arr[i] = arr[4-i];
-        arr[4-i] = temp; 
+        arr[i] = arr[4 - i];
+        arr[4 - i] = temp; 
     }
 }
 
-void arrayprint(int arr[]){
-    for(int i = 0; i < 5; i++){
-        printf("The value of element %d is %d\n", i , arr[i]);
+// Function to print an array
+// This function takes an array of integers and prints its elements.
+// It assumes the array has 5 elements.
+void arrayprint(int arr[]) {
+    for (int i = 0; i < 5; i++) {
+        printf("The value of element %d is %d\n", i, arr[i]);
     }
 }
+
     
 int main(){
     

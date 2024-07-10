@@ -17,14 +17,25 @@ int main(){
     // scanf("%d", &d1.kms);
     // // similarly we can copy paste above and print details of other drivers
 
-    for(int i = 1; i < 4; i++){
-        printf("Enter the details of %d driver \n", i);
-        printf("Enter the name of %d driver \n", i);
-        scanf("%s", &d1.name);
-        printf("Enter the driving licence of %d driver \n", i);
-        scanf("%s", &d1.dlno);
-        printf("Enter the route of %d driver \n", i);
-        scanf("%s", &d1.kms);
+    // Input details for each driver
+    for (int i = 0; i < 3; i++) {
+        printf("Enter the details of driver %d:\n", i + 1);
+        printf("Enter the name of driver %d: ", i + 1);
+        scanf("%s", drivers[i].name); // No & needed for array names (string)
+        printf("Enter the driving licence of driver %d: ", i + 1);
+        scanf("%s", drivers[i].dlno);
+        printf("Enter the route of driver %d: ", i + 1);
+        scanf("%d", &drivers[i].kms); // Use & for integers
+    }
+
+    // Displaying entered details
+    printf("\nDriver details:\n");
+    for (int i = 0; i < 3; i++) {
+        printf("Driver %d:\n", i + 1);
+        printf("Name: %s\n", drivers[i].name);
+        printf("Driving Licence Number: %s\n", drivers[i].dlno);
+        printf("Kms driven: %d\n", drivers[i].kms);
+        printf("\n");
     }
 
     return 0;

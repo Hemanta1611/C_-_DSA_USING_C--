@@ -36,39 +36,51 @@ int main(){
 
     return 0;
 }*/
-
 #include <stdio.h>
 #include <string.h>
 
-    struct student{
-        int id;
-        int marks;
-        char fav_char;
-        char name[34];
-    };
-int main(){
+// Define a structure called 'student'
+struct student {
+    int id;          // ID of the student
+    int marks;       // Marks obtained by the student
+    char fav_char;   // Favorite character of the student
+    char name[34];   // Name of the student
+};
+
+int main() {
     
+    // Declare variables of type 'struct student'
     struct student hemanta, sandeep, dibyanshu;
+
+    // Assign values to the members of 'hemanta'
     hemanta.id = 2;
-    sandeep.id = 1;
-    dibyanshu.id = 3;
     hemanta.marks = 233;
-    sandeep.marks = 234;
-    dibyanshu.marks = 235;
     hemanta.fav_char = 'a';
-    sandeep.fav_char = 's';
-    dibyanshu.fav_char = 't';
     strcpy(hemanta.name, "hemanta is student of this 2023 year");
+
+    // Assign values to the members of 'sandeep'
+    sandeep.id = 1;
+    sandeep.marks = 234;
+    sandeep.fav_char = 's';
     strcpy(sandeep.name, "gadha of the year 2089");
+
+    // Assign values to the members of 'dibyanshu'
+    dibyanshu.id = 3;
+    dibyanshu.marks = 235;
+    dibyanshu.fav_char = 't';
+    // No name is assigned to 'dibyanshu'
+
+    // Print information about 'hemanta'
     printf("Hemanta got %d marks\n", hemanta.marks);
     printf("Good news guys: %s\n", hemanta.name);
+
+    // Print information about 'sandeep'
     printf("lol guys sandeep is : %s\n", sandeep.name);
 
     /*
-                Arrow Operator
-        (*ptr).code   ==   ptr->co.de
+        Arrow Operator
+        (*ptr).code   ==   ptr->code
     */
-    
 
     return 0;
 }
