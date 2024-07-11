@@ -1,29 +1,45 @@
 #include <stdio.h>
-    
-   // FILE I/O
 
-int main(){
-    
-    FILE *ptr = NULL;
-    char string[84] = "this content was produced by tuto62_64.c\n";
+// FILE I/O Operations
 
-    // reading a file
-    // ptr = fopen("myfile.txt","r");
-    // // r = read
-    // fscanf(ptr, "%s", string);
-    // printf("The content of this file has %s\n", string);
-   
-   // writing a file by deleting old content
-   // ptr = fopen("myfile.txt","w");
-   // w = write
-   // fprintf(ptr, "%s", string);
+/**
+ * @brief Main function to demonstrate file input/output operations.
+ * 
+ * @return int Returns 0 upon successful execution.
+ */
+int main() {
+    FILE *ptr = NULL;  // Pointer to handle file operations
+    char string[84] = "This content was produced by tuto62_64.c\n";  // String to write into the file
 
-   // writing a  content with out deleting old content
-   ptr = fopen("myfile.txt", "a");
-   // a = append means = add data to the existing data of file
-   fprintf(ptr, "%s", string);
-   // number of times u will run = number of times content of string will print of file
+    // Reading a file (uncomment to use)
+    // ptr = fopen("myfile.txt", "r");  // Open file for reading
+    // if (ptr == NULL) {
+    //     printf("The file does not exist.\n");
+    //     return 1;
+    // }
+    // fscanf(ptr, "%s", string);  // Read content from the file
+    // printf("The content of this file is: %s\n", string);
+    // fclose(ptr);  // Close the file after reading
 
+    // Writing to a file by deleting old content (uncomment to use)
+    // ptr = fopen("myfile.txt", "w");  // Open file for writing
+    // if (ptr == NULL) {
+    //     printf("The file could not be opened.\n");
+    //     return 1;
+    // }
+    // fprintf(ptr, "%s", string);  // Write content to the file
+    // fclose(ptr);  // Close the file after writing
+
+    // Writing to a file without deleting old content (Append mode)
+    ptr = fopen("myfile.txt", "a");  // Open file in append mode
+    if (ptr == NULL) {
+        printf("The file could not be opened.\n");
+        return 1;
+    }
+    fprintf(ptr, "%s", string);  // Append content to the file
+    fclose(ptr);  // Close the file after writing
+
+    // Note: If the file doesn't exist, it will be created in both write ("w") and append ("a") modes.
 
     return 0;
 }

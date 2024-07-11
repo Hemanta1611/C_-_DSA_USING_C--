@@ -19,23 +19,33 @@ PREPROCESSOR COMMANDS:
 
 
 #include <stdio.h>
-#include "sum.c"
-#define sq(x) x*x
-    
-int main(){
-    
-    int a, b;
-    scanf("%d%d", &a, &b);
-    printf("square of %d is %d", a, sq(a));
-    printf("\naddition of %d & %d is %d\n", a, b,sum(a,b));
+#include "sum.c"  // Include the custom header file for the sum function
+#define sq(x) (x)*(x)  // Macro to compute the square of a number
 
-    
-    printf("File name is %s\n", __FILE__);
-    printf("Today date is  %s\n", __DATE__);
-    printf("Time :  %s\n", __TIME__);
-    printf("Lime No is  %d\n", __LINE__);
-    printf("ANSI: %d\n", __STDC__);
-    // ANSI = it is ansi standard
-    
+/**
+ * @brief Main function to demonstrate the use of macros, custom header files, and preprocessor directives.
+ * 
+ * @return int Returns 0 upon successful execution.
+ */
+int main() {
+    int a, b;
+
+    // Reading two integers from the user
+    printf("Enter two integers:\n");
+    scanf("%d%d", &a, &b);
+
+    // Using the sq macro to calculate the square of a number
+    printf("Square of %d is %d\n", a, sq(a));
+
+    // Using the sum function from sum.c to calculate the sum of two numbers
+    printf("Addition of %d and %d is %d\n", a, b, sum(a, b));
+
+    // Displaying predefined macros
+    printf("File name: %s\n", __FILE__);       // Current file name
+    printf("Today's date: %s\n", __DATE__);    // Current date
+    printf("Time: %s\n", __TIME__);            // Current time
+    printf("Line number: %d\n", __LINE__);     // Current line number
+    printf("ANSI: %d\n", __STDC__);            // ANSI standard compliance
+
     return 0;
 }

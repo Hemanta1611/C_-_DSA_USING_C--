@@ -2,38 +2,55 @@
 // this pointer points towards freed or deleted memory location
 #include <stdio.h>
 #include <stdlib.h>
-    
-    int *function_dangling(){
-        int a, b, sum;
-        a = 34;
-        b = 345;
-        sum = a+ b;
-        return &sum;
-    }
 
-int main(){
-    
-    // case 1 : deallocating
-    int *ptr = (int *) malloc(7*sizeof(int));
+/**
+ * @brief This function demonstrates a dangling pointer by returning the address of a local variable.
+ * 
+ * @return int* Pointer to a local variable that will go out of scope after the function returns.
+ */
+int* function_dangling() {
+    int a, b, sum;
+    a = 34;
+    b = 345;
+    sum = a + b;
+    return &sum;  // Returning the address of a local variable
+}
+
+int main() {
+    // Case 1: Deallocating memory using free()
+    int *ptr = (int *) malloc(7 * sizeof(int));  // Allocate memory for an array of 7 integers
     ptr[0] = 34;
     ptr[1] = 35;
     ptr[2] = 36;
     ptr[3] = 37;
-    free(ptr); // ptr is now a dangling pointer
+    free(ptr);  // Free the allocated memory. ptr is now a dangling pointer.
 
-//  case 2: function returning local variable adress
-    int *dangptr = function_dangling();
+    // Accessing ptr after free() is dangerous as it is now a dangling pointer.
+    // Uncommenting the next line will cause undefined behavior.
+    // printf("%d\n", ptr[0]); 
 
-    // case 3: if a variable goes out of scope
+    // Case 2: Function returning address of a local variable
+    int *dangptr = function_dangling();  // dangptr is a dangling pointer as it points to a local variable of the function which no longer exists.
+
+    // Accessing dangptr will cause undefined behavior as it is a dangling pointer.
+    // Uncommenting the next line will cause undefined behavior.
+    // printf("%d\n", *dangptr); 
+
+    // Case 3: Variable going out of scope
     int *danglingptr3;
     {
-        int a =12;
-        danglingptr3 = &a;
+        int a = 12;
+        danglingptr3 = &a;  // danglingptr3 points to a local variable 'a'
     }
-    // here variable a goes out of scope which means danglingptr3 is pointing to a location which is freed and 
-    // hence danglingptr3 is now a dangling pointer
+    // Here, variable 'a' goes out of scope, making danglingptr3 a dangling pointer.
+
+    // Accessing danglingptr3 will cause undefined behavior as it is a dangling pointer.
+    // Uncommenting the next line will cause undefined behavior.
+    // printf("%d\n", *danglingptr3); 
+
     return 0;
 }
+
 
 // DANGLING CASES:
 
