@@ -1,39 +1,44 @@
-#include <iostream>
-using namespace std;
+#include <iostream> // Include the input-output stream library
+using namespace std; // Use the standard namespace
 
-int add(int a, int b){
-    cout<<"using function with 2 arguments"<<endl;
-    return a + b;
+// Function to add two integers
+int add(int a, int b) {
+    cout << "Using function with 2 arguments" << endl;
+    return a + b; // Return the sum of two integers
 }
 
-int add(int a, int b, int c){
-    cout<<"using function with 3 arguments"<<endl;
-    return a + b + c;
+// Function to add three integers (function overloading)
+int add(int a, int b, int c) {
+    cout << "Using function with 3 arguments" << endl;
+    return a + b + c; // Return the sum of three integers
 }
 
-// volume of cylinder
-float volume(double r, int h){
-    return (3.14 * r * r * h);
+// Function to calculate the volume of a cylinder
+float volume(double r, int h) {
+    return 3.14 * r * r * h; // Volume formula: π * r^2 * h
 }
 
-// volume of cube
-float volume(int a){
-    return (a * a * a);
+// Function to calculate the volume of a cube
+float volume(int a) {
+    return a * a * a; // Volume formula: side^3
 }
 
-// volume of rectangle(cuboid)
-float volume(int l, int b, int h){
-    return (l * b * h);
+// Function to calculate the volume of a cuboid (function overloading)
+float volume(int l, int b, int h) {
+    return l * b * h; // Volume formula: length * breadth * height
 }
+
+int main() {
+    int a = 2, b = 7, c = 9;
     
-int main(){
+    // Demonstrate function overloading with add functions
+    cout << "The sum of a and c is: " << add(a, c) << endl; // Calls add(int, int)
+    cout << "The sum of a, b and c is: " << add(a, b, c) << endl; // Calls add(int, int, int)
     
-    int a = 2, b = 7, c =9;
-    cout<<"The sum of a and c is: "<<add(a,c)<<endl;
-    cout<<"The sum of a , b and c is: "<<add(a,b,c)<<endl;
-    cout<<"The volume of cuboid is: "<<volume(5,5,5)<<endl;
-    cout<<"The volume of cylinder is: "<<volume(5,5)<<endl;
-    cout<<"The volume of cube is: "<<volume(5)<<endl;
+    // Demonstrate function overloading with volume functions
+    cout << "The volume of cuboid is: " << volume(5, 5, 5) << endl; // Calls volume(int, int, int)
+    cout << "The volume of cylinder is: " << volume(5, 5) << endl; // Calls volume(double, int)
+    cout << "The volume of cube is: " << volume(5) << endl; // Calls volume(int)
     
-    return 0;
+    return 0; // Return 0 to indicate successful execution
 }

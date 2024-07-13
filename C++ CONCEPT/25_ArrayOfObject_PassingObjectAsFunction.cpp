@@ -1,59 +1,79 @@
 #include <iostream>
 using namespace std;
 
-class employee{
-    private:
-    int id;
-    int salary;
-    public:
-    void setid_salary(void){
-        cout<<"Enter the id of employee ";
-        cin>>id;
-        cout<<"Enter the salary of employee ";
-        cin>>salary;
+// Class definition for Employee
+class employee {
+private:
+    int id; // Private member to store employee ID
+    int salary; // Private member to store employee salary
+
+public:
+    // Function to set employee ID and salary
+    void setid_salary(void) {
+        cout << "Enter the ID of the employee: ";
+        cin >> id;
+        cout << "Enter the salary of the employee: ";
+        cin >> salary;
     }
-    void getid_salary(void){
-        cout<<"The id of this employee is "<<id<<endl;
-        cout<<"The salary of this employee is "<<salary<<endl;
+
+    // Function to display employee ID and salary
+    void getid_salary(void) {
+        cout << "Employee ID: " << id << endl;
+        cout << "Employee Salary: " << salary << endl;
     }
 };
 
-class complex{
-    private:
-    int real; 
-    int imaginary;
-    public:
-    void setdata(int v1, int v2){
+// Class definition for Complex Number
+class complex {
+private:
+    int real; // Private member to store real part of complex number
+    int imaginary; // Private member to store imaginary part of complex number
+
+public:
+    // Function to set real and imaginary parts of complex number
+    void setdata(int v1, int v2) {
         real = v1;
         imaginary = v2;
     }
-    void setdata_bysum(complex o1, complex o2){
-        real = o1.real + o2.real; // here dot means not product its just showing pointing value of real part of complex c1 and c2
-        imaginary = o1.imaginary + o2.imaginary; // same here for dot 
+
+    // Function to set data of complex number by summing two other complex numbers
+    void setdata_bysum(complex o1, complex o2) {
+        real = o1.real + o2.real;
+        imaginary = o1.imaginary + o2.imaginary;
     }
-    void printnumber(){
-        cout<<"Your complex number is "<<real<<" + "<<imaginary<<"i"<<endl;
+
+    // Function to print the complex number in the form "real + imaginary i"
+    void printnumber() {
+        cout << "Your complex number is " << real << " + " << imaginary << "i" << endl;
     }
 };
 
-int main(){
+int main() {
     
+    // Example usage of the Employee class
     // employee fb[7];
-    // for (int i = 0; i < 7; i++) 
-    // {
+    // for (int i = 0; i < 7; i++) {
     //     fb[i].setid_salary();
     //     fb[i].getid_salary();
     // }
 
+    // Example usage of the Complex class
     complex c1, c2, c3;
-    c1.setdata(1,2);
+
+    // Set and print complex number c1
+    c1.setdata(1, 2);
+    cout << "Setting c1: ";
     c1.printnumber();
-    c2.setdata(3,4);
+
+    // Set and print complex number c2
+    c2.setdata(3, 4);
+    cout << "Setting c2: ";
     c2.printnumber();
 
+    // Set c3 to the sum of c1 and c2, then print c3
     c3.setdata_bysum(c1, c2);
+    cout << "Sum of c1 and c2 (c3): ";
     c3.printnumber();
-    
-    
+
     return 0;
 }

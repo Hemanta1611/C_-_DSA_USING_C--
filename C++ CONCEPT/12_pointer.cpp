@@ -1,29 +1,48 @@
-#include <iostream>
+#include <iostream>  // Includes the input-output stream library
 
-using namespace std;
+using namespace std;  // Use the standard namespace
 
-int main(){
+int main() {
+    // Pointer is another data type which stores the address of another variable
 
-    // pointer is just an another data type which stores adress of other datatype variable
-    int a = 3;
-    int * b = &a;// pointer variable b is pointing towards address of variable a
-    // * - dereferencing operator
-    // & - adress of operator - referencing operator
-    cout<<"Adress of a: "<<&a<<".\n";
-    cout<<"Adress of a: "<<b<<endl;
-    cout<<"Value at adress b is: "<<*b<<endl;
-    cout<<"Value at adress b is: "<<*(&a)<<endl;
+    int a = 3;  // Declare an integer variable 'a' and initialize it with 3
 
-    int ** c = &b;
-    cout<<"The address of b is: "<<&b<<endl;
-    cout<<"The address of b is: "<<c<<endl;
-    cout<<"The address of c is: "<<*c<<endl;
-    cout<<"The value at address of c is:"<<**c<<endl;
-    cout<<"The value at address of c is:"<<*(*(&b))<<endl;
-    // *(&b) = dereferencing adress of b = pointer b = value of b = which stores address of a
-    // *(*(&b)) = dereferencing pointer b = dereferencing adress of a = value of a
-    // this pointer to pointer variable in which a new pointer stores adress of other pointer 
-    // we can do this by assigning two stars
+    // Declare a pointer variable 'b' and assign it the address of 'a'
+    int *b = &a;  // The '*' denotes that 'b' is a pointer, '&' gives the address of 'a'
+    
+    // Output the address of 'a'
+    cout << "Address of a: " << &a << ".\n";  // Use the '&' operator to get the address of 'a'
 
-    return 0;
+    // Output the address stored in pointer 'b'
+    cout << "Address of a: " << b << endl;  // 'b' stores the address of 'a'
+
+    // Output the value stored at the address pointed to by 'b'
+    cout << "Value at address b is: " << *b << endl;  // The '*' operator dereferences 'b', giving the value at that address
+
+    // Output the value stored at the address of 'a'
+    cout << "Value at address b is: " << *(&a) << endl;  // The '&' operator gets the address of 'a', '*' dereferences it
+
+    // Declare a pointer to a pointer variable 'c' and assign it the address of pointer 'b'
+    int **c = &b;  // 'c' is a pointer to a pointer, it stores the address of 'b'
+
+    // Output the address of pointer 'b'
+    cout << "The address of b is: " << &b << endl;  // Use the '&' operator to get the address of 'b'
+
+    // Output the address stored in pointer 'c'
+    cout << "The address of b is: " << c << endl;  // 'c' stores the address of 'b'
+
+    // Output the value stored at the address pointed to by 'c' (which is the address of 'a')
+    cout << "The address of c is: " << *c << endl;  // The '*' operator dereferences 'c', giving the address of 'a'
+
+    // Output the value stored at the address pointed to by the pointer to the pointer 'c'
+    cout << "The value at address of c is: " << **c << endl;  // '**' dereferences 'c' twice, giving the value of 'a'
+
+    // Output the value stored at the address pointed to by the pointer to the pointer 'b'
+    cout << "The value at address of c is: " << *(*(&b)) << endl;  
+    // The '&' operator gets the address of 'b', '*' dereferences it to get the address of 'a', '*' dereferences again to get the value of 'a'
+
+    // This demonstrates pointer to pointer variables where a pointer stores the address of another pointer
+    // We can achieve this by using double asterisks '**' for the pointer to pointer variable
+
+    return 0;  // Return 0 to indicate successful execution
 }

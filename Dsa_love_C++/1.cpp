@@ -25,3 +25,7 @@ int main(){
     
     return 0;
 }
+
+// to run program in terminal
+// g++ .\1_intro.cpp
+// .\a.exe
