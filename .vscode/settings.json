@@ -1,7 +1,9 @@
 {
     "files.associations": {
+        "*.ejs": "html",
         "algorithm": "cpp",
         "iostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "16_linkedlist_insertion.C": "cpp"
     }
 }
