@@ -26,3 +26,14 @@ int main(){
     
     return 0;
 }
+
+/*
+Key Points
+Base Case: 
+    It is essential for terminating the recursive calls and preventing infinite loops.
+Recursive Case: 
+    This is where the function calls itself with a modified argument, moving towards the base case.
+Stack Memory: 
+    Each recursive call uses stack memory. Too many recursive calls can lead to a stack overflow.
+
+*/
