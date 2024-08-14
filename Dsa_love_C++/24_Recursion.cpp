@@ -22,7 +22,7 @@ int main(){
     cout<<"2 To the power 10: "<< twoToThePowerN(10)<<endl;
     cout<<"7th term in fibonacci series: "<<fibonacci(7)<<endl;
     
-
+    
     
     return 0;
 }
