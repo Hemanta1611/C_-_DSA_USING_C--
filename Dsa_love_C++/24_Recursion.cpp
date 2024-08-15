@@ -34,6 +34,6 @@ Base Case:
 Recursive Case: 
     This is where the function calls itself with a modified argument, moving towards the base case.
 Stack Memory: 
-    Each recursive call uses stack memory. Too many recursive calls can lead to a stack overflow.
+    Each recursive call uses stack memory. Too many recursive calls can lead to a stack overflow. 
 
 */
