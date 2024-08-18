@@ -17,12 +17,26 @@ int fibonacci(int n){
     return fibonacci(n-1) + fibonacci(n-2);
 }
 
+void printArray(int arr[], int size, int index){
+    // base case
+    if(index >= size) return ;
+
+    cout<<arr[index]<<" ";
+
+    printArray(arr, size, index+1);
+}
+
+
+
 int main(){
     
     cout<<"2 To the power 10: "<< twoToThePowerN(10)<<endl;
     cout<<"7th term in fibonacci series: "<<fibonacci(7)<<endl;
     
-    
+    int arr[] = {10, 20, 30, 40, 50};
+    int size = 5;
+    int index = 0;
+    printArray(arr, size, index);
     
     return 0;
 }
