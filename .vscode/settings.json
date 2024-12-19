@@ -4,6 +4,7 @@
         "algorithm": "cpp",
         "iostream": "cpp",
         "vector": "cpp",
-        "16_linkedlist_insertion.C": "cpp"
+        "16_linkedlist_insertion.C": "cpp",
+        "ostream": "cpp"
     }
 }
