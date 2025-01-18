@@ -5,6 +5,7 @@
         "iostream": "cpp",
         "vector": "cpp",
         "16_linkedlist_insertion.C": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "ratio": "cpp"
     }
 }
