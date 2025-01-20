@@ -6,6 +6,8 @@
         "vector": "cpp",
         "16_linkedlist_insertion.C": "cpp",
         "ostream": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "array": "cpp",
+        "regex": "cpp"
     }
 }
