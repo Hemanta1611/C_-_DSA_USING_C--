@@ -8,6 +8,9 @@
         "ostream": "cpp",
         "ratio": "cpp",
         "array": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp"
     }
 }
