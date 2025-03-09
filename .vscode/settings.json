@@ -11,6 +11,7 @@
         "regex": "cpp",
         "deque": "cpp",
         "forward_list": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "string": "cpp"
     }
 }

@@ -88,6 +88,11 @@ void addOne(Node *&head) {
     reverseLL(head); // Reverse the list back to its original order.
 }
 
+class Solution{
+public:
+    
+};
+
 int main(){
     
     Node *head = new Node(9);
