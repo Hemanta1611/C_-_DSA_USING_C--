@@ -149,6 +149,73 @@ public:
 };
 
 
+class KQueue{
+public:
+    int n, k, freeSpot;
+    int *arr, *front, *rear, *next;
+
+    KQueue(int _n, int _k) : n(_n), k(_k), freeSpot(0){
+        arr = new int[n];
+        next = new int[n];
+        front = new int[k];
+        rear = new int[k];
+        for(int i = 0; i < k; i++){
+            front[i] = rear[i] = -1;
+        }
+        for(int i = 0; i < n; i++){
+            next[i] = i+1;
+        }
+        next[n-1] = -1;
+    }
+
+    bool push(int x, int qIth){
+        // overflow
+        if(freeSpot == -1) return false;
+
+        // find first free index
+        int index = freeSpot;
+
+        // update freespot
+        freeSpot = next[index];
+
+        // if first element in qith
+        if(front[qIth] == -1){
+            front[qIth] = index;
+        }
+        else{
+            // link new element to that Q's rearest element
+            next[rear[qIth]] = index;
+        }
+
+        // update next
+        next[index] = -1;
+
+        // update rear
+        rear[qIth] = index;
+        arr[index] = x;
+        return true;
+    }
+
+    int pop(int qIth){
+        // underflow
+        if(front[qIth] == -1) return -1;
+
+        // find index to pop
+        int index = front[qIth];
+
+        // front update
+        front[qIth] = next[index];
+
+        // update freespots
+        next[index] = freeSpot;
+        freeSpot = index;
+
+        return arr[index];
+    }
+
+};
+
+
 int main(){
     
     string s = "ababc";

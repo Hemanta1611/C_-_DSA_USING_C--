@@ -12,6 +12,7 @@
         "deque": "cpp",
         "forward_list": "cpp",
         "list": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "new": "cpp"
     }
 }
