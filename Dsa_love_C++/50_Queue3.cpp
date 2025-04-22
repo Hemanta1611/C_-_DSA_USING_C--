@@ -155,10 +155,10 @@ public:
     int *arr, *front, *rear, *next;
 
     KQueue(int _n, int _k) : n(_n), k(_k), freeSpot(0){
-        arr = new int[n];
-        next = new int[n];
-        front = new int[k];
-        rear = new int[k];
+        arr = new int[n]; // array
+        next = new int[n]; // it will point the next index of rear and also the free spot
+        front = new int[k]; // array for storing front index of all k queues: i.e. k[0] = front index of q0, k[1] = front index of q1, like that
+        rear = new int[k]; // array for storing rear index of all k queues
         for(int i = 0; i < k; i++){
             front[i] = rear[i] = -1;
         }
@@ -188,7 +188,7 @@ public:
         }
 
         // update next
-        next[index] = -1;
+        next[index] = -1; // it means this index is now the last element in the queue and hence can't have any further index in next
 
         // update rear
         rear[qIth] = index;
@@ -213,6 +213,12 @@ public:
         return arr[index];
     }
 
+    ~KQueue(){
+        delete[] arr;
+        delete[] next;
+        delete[] front;
+        delete[] rear;
+    }
 };
 
 
